@@ -1,25 +1,22 @@
-import logo from './logo.svg';
-import './App.css';
+import ReactDom from "react-dom";
+import Member from "./components/Member";
+import From from "./components/Form";
+import { useState } from "react";
 
 function App() {
+  const [form, setForm] = useState([
+    {
+      name: "Bobby Joe",
+      email: "gobo@ggg.com",
+      role: "Student",
+    },
+  ]);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <h1>Member Form</h1>
+      <From />
+      <Member />
     </div>
   );
 }
-
-export default App;
